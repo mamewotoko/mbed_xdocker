@@ -46,6 +46,7 @@ TODO
 -----------
 * create command like rpxc
 * do not build as root, use host user
+* separate repository of hello_app
 * ethernet sample, USB sample
 * create starbord orange library
    * some libraries are contained in mbed (SD, FATFileSystem ...)
