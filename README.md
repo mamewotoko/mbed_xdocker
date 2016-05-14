@@ -3,6 +3,9 @@ mbed_xdocker: mbed sample app built by make on Docker [![Build Status](https://t
 
 How to build docker container
 -----------------------------
+1. edit imagefile/Makefile.config
+  * TARGET: target chip name (e.g. LPC1768)
+  * MBEDPATH: path where mbed is mounted as usb storage (optional)
 1. docker image named mbed is created
 
     ```
@@ -10,9 +13,6 @@ How to build docker container
     ```
 How to run (how to build mbed app)
 ----------------------------------
-1. edit Makefile.config
-  * TARGET: target chip name (e.g. LPC1768)
-  * MBEDPATH: path where mbed is mounted as usb storage (optional)
 2. start docker in this directory
 
     ```
@@ -27,25 +27,28 @@ How to run (how to build mbed app)
 4. hello.bin file is craeted in bin directory, copy it to mbed
 5. reset mbed, then LED1 will blink
 
-Directry tree
--------------
+Inside container
+----------------
+
 ```
+ /mbxc/Makefile.config: make file config
  /opt
    mbed: mbed SDK
    gcc-arm-none-eabi-4_7-2012q4: TOOLCHAIN_PATH
  /build
-   Makefile.config: make file config
+   
 ```
 
 Files in app project
 --------------------
 * Makefile
+  * include /mbxc/Makefile.config
 * bin: final .bin file is located
 * build: .o, elf files are located
 * src: source code
 
 TODO
------------
+----
 * create command like rpxc
 * do not build as root, use host user
 * separate repository of hello_app

@@ -1,7 +1,7 @@
 APPNAME = hello
 SRC = src/main.cpp
 
-include ../Makefile.config
+include /mbxc/Makefile.config
 
 LIBRARY_PATH = -L$(MBED_SDK_PATH)/mbed/TARGET_$(TARGET)/TOOLCHAIN_$(TOOLCHAIN)
 LIBRARIES = -lmbed -lstdc++ -lsupc++ -lm -lc -lgcc -lnosys

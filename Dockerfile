@@ -12,5 +12,11 @@ ENV PATH=${TOOLCHAIN_PATH}/bin:${PATH}
 WORKDIR /opt/mbed
 #TODO: config
 RUN python workspace_tools/build.py -m LPC1768 -t GCC_ARM -r -e -u -d
+
+WORKDIR /mbxc
+ENTRYPOINT ["/mbxc/entrypoint.sh"]
+COPY imagefiles/entrypoint.sh imagefiles/mbxc imagefiles/Makefile.config /mbxc/
+
 VOLUME /build
 WORKDIR /build
+
