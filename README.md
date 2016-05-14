@@ -1,27 +1,29 @@
-mbed_xdocker: mbed sample app built by make on Docker
+mbed_xdocker: mbed sample app built by make on Docker [![Build Status](https://travis-ci.org/mamewotoko/mbed_xdocker.svg?branch=master)](https://travis-ci.org/mamewotoko/mbed_xdocker)
 =====================================================
 
 How to build docker container
 -----------------------------
 1. docker image named mbed is created
-```
-sh build.sh
-```
 
+    ```
+    sh build.sh
+    ```
 How to run (how to build mbed app)
 ----------------------------------
 1. edit Makefile.config
   * TARGET: target chip name (e.g. LPC1768)
   * MBEDPATH: path where mbed is mounted as usb storage (optional)
 2. start docker in this directory
-```
-docker run -it -v $PWD:/build mbed bash
-```
+
+    ```
+    docker run -it -v $PWD:/build mbed bash
+    ```
 3. build sample app
-```
-cd hello_app
-make
-```
+
+    ```
+    cd samples/hello_app
+    make
+    ```
 4. hello.bin file is craeted in bin directory, copy it to mbed
 5. reset mbed, then LED1 will blink
 
@@ -37,10 +39,10 @@ Directry tree
 
 Files in app project
 --------------------
-Makefile
-bin: final .bin file is located
-build: .o, elf files are located
-src: source code
+* Makefile
+* bin: final .bin file is located
+* build: .o, elf files are located
+* src: source code
 
 TODO
 -----------
