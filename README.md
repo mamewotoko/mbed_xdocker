@@ -49,7 +49,6 @@ Files in app project
 
 TODO
 ----
-* create command like rpxc
 * do not build as root, use host user
 * separate repository of hello_app
 * ethernet sample, USB sample
