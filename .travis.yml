@@ -5,5 +5,9 @@ services:
 
 script:
   - sh build.sh
-  - cd samples/hello_app; docker run mbed > mbxc ; ./mbxc make; file build/hello.elf
+  - cd samples/hello_app
+  - docker run mbed > mbxc
+  - chmod +x mbxc;
+  - ./mbxc make
+  - file build/hello.elf
 # TODO: run on qemu?
