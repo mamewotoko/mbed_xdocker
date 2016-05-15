@@ -1,7 +1,7 @@
 FROM 32bit/ubuntu:14.04
 MAINTAINER Takashi Masuyama <mamewotoko@gmail.com>
 
-RUN sudo apt-get update && sudo apt-get install make git python python-colorama python-jinja2 wget -y
+RUN apt-get update && apt-get install -y make git python python-colorama python-jinja2 wget 
 RUN mkdir /work /work/build 
 WORKDIR /opt
 RUN git clone https://github.com/mbedmicro/mbed.git
